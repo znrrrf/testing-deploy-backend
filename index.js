@@ -16,3 +16,4 @@ app.use("/", (req, res) => {
 app.listen(1000, () => {
   console.log("por is running on 1000");
 });
+module.exports = app;
