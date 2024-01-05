@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const db = require("./models");
 const { userRouters } = require("./routers");
+const cors = require("cors");
 const user = db.User;
 
 const dotenv = require("dotenv");
@@ -34,7 +35,7 @@ dotenv.config();
 //     });
 //   }
 // });
-
+app.use(cors());
 app.use(express.json());
 
 app.use("/user", userRouters);
