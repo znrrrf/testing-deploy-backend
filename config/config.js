@@ -7,6 +7,7 @@ console.log({
   host: process.env.HOST,
   dialect: process.env.DIALECT,
   uri: process.env.MYSQL_ADDON_URI,
+  baru: "yes",
 });
 module.exports = {
   development: {
