@@ -27,8 +27,6 @@ const sequelize = new Sequelize({
   password: "sw4tvwGwf4JJ7ymgR6so",
   database: "bg0gktkdgouzpen9spo9",
   dialect: "mysql",
-  dialectModule: require("mysql2"),
-  benchmark: true,
 });
 
 fs.readdirSync(__dirname)
