@@ -10,10 +10,14 @@ module.exports = {
         result,
       });
     } catch (error) {
+      res.status(400).send({
+        message: "Internal Server Error",
+        error,
+      });
       console.error("Error in getUser controller:", error);
       res.status(500).send({
         message: "Internal Server Error",
-        error: error.message,
+        error,
       });
     }
   },
