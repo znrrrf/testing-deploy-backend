@@ -19,4 +19,15 @@ module.exports = {
       console.log({ error });
     }
   },
+  getCoba: async (req, res) => {
+    try {
+      res.status(200).send({
+        message: "success",
+      });
+    } catch (error) {
+      res.status(400).send({
+        error,
+      });
+    }
+  },
 };
