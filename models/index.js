@@ -15,10 +15,15 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else if (config.uri) {
-  sequelize = new Sequelize(config.uri);
+  sequelize = new Sequelize(config.uri, {
+    dialectModule: require("mysql2"),
+    benchmark: true,
+  });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     ...config,
+    dialectModule: require("mysql2"),
+    benchmark: true,
   });
 }
 
