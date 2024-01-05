@@ -1,14 +1,14 @@
 const dotenv = require("dotenv");
 dotenv.config();
-console.log({
-  username: process.env.USER_NAME,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
-  host: process.env.HOST,
-  dialect: process.env.DIALECT,
-  uri: process.env.MYSQL_ADDON_URI,
-  baru: "yes",
-});
+// console.log({
+//   username: process.env.USER_NAME,
+//   password: process.env.PASSWORD,
+//   database: process.env.DATABASE,
+//   host: process.env.HOST,
+//   dialect: process.env.DIALECT,
+//   uri: process.env.MYSQL_ADDON_URI,
+//   baru: "yes",
+// });
 module.exports = {
   development: {
     username: process.env.USER_NAME,
