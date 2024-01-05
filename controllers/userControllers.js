@@ -4,6 +4,8 @@ const user = db.User;
 module.exports = {
   getUser: async (req, res) => {
     try {
+      console.log({ db });
+
       const result = await user.findAll();
 
       res.status(200).send({
