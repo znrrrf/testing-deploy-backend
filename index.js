@@ -4,6 +4,10 @@ const db = require("./models");
 const { userRouters } = require("./routers");
 const user = db.User;
 
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 // app.use("/", (req, res) => {
 //   try {
 //     res.status(200).send({
