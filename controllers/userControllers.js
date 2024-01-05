@@ -5,6 +5,20 @@ module.exports = {
     try {
       console.log({ User });
 
+      // Check if User model is defined before using it
+      if (!User) {
+        return res.status(500).send({
+          message: "User model is not defined",
+        });
+      }
+
+      // Check if findAll method is defined before calling it
+      if (typeof User.findAll !== "function") {
+        return res.status(500).send({
+          message: "findAll method is not defined in User model",
+        });
+      }
+
       const result = await User.findAll();
 
       res.status(200).send({
