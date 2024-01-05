@@ -1,25 +1,25 @@
-const { user } = require("../models");
+const { User } = require("../models");
 
 module.exports = {
   getUser: async (req, res) => {
     try {
-      console.log({ user });
+      console.log({ User });
 
       // Check if User model is defined before using it
-      if (!user) {
+      if (!User) {
         return res.status(500).send({
           message: "User model is not defined",
         });
       }
 
       // Check if findAll method is defined before calling it
-      if (typeof user.findAll !== "function") {
+      if (typeof User.findAll !== "function") {
         return res.status(500).send({
           message: "findAll method is not defined in User model",
         });
       }
 
-      const result = await user.findAll();
+      const result = await User.findAll();
 
       res.status(200).send({
         result,
