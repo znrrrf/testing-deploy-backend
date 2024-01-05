@@ -17,13 +17,11 @@ if (config.use_env_variable) {
 } else if (config.uri) {
   sequelize = new Sequelize(config.uri, {
     dialectModule: require("mysql2"),
-    benchmark: true,
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     ...config,
     dialectModule: require("mysql2"),
-    benchmark: true,
   });
 }
 
