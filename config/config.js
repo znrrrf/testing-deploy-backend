@@ -6,6 +6,7 @@ console.log({
   database: process.env.DATABASE,
   host: process.env.HOST,
   dialect: process.env.DIALECT,
+  uri: process.env.MYSQL_ADDON_URI,
 });
 module.exports = {
   development: {
@@ -33,5 +34,6 @@ module.exports = {
     database: process.env.DATABASE,
     host: process.env.HOST,
     dialect: process.env.DIALECT,
+    uri: process.env.MYSQL_ADDON_URI,
   },
 };

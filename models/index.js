@@ -12,14 +12,27 @@ const config = require(__dirname + "/../config/config.js")[env];
 const db = {};
 
 let sequelize;
+
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, {
-    ...config,
-    dialectModule: require("mysql2"),
-    benchmark: true,
-  });
+  const sequelizeConfig = config.uri
+    ? {
+        uri: config.uri,
+        dialectModule: require("mysql2"),
+        benchmark: true,
+      }
+    : {
+        database: config.database,
+        username: config.username,
+        password: config.password,
+        host: config.host,
+        dialect: config.dialect,
+        dialectModule: require("mysql2"),
+        benchmark: true,
+      };
+
+  sequelize = new Sequelize(sequelizeConfig);
 }
 
 // const sequelize = new Sequelize({
