@@ -18,6 +18,11 @@ if (config.use_env_variable) {
 } else {
   const sequelizeConfig = config.uri
     ? {
+        database: config.database,
+        username: config.username,
+        password: config.password,
+        host: config.host,
+        dialect: config.dialect,
         uri: config.uri,
         dialectModule: require("mysql2"),
         benchmark: true,
