@@ -1,6 +1,12 @@
 const dotenv = require("dotenv");
 dotenv.config();
-// console.log({ env: process.env.USER_NAME });
+console.log({
+  username: process.env.USER_NAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+  host: process.env.HOST,
+  dialect: process.env.DIALECT,
+});
 module.exports = {
   development: {
     username: process.env.USER_NAME,
