@@ -6,7 +6,7 @@ module.exports = {
     try {
       console.log({ db });
 
-      const result = await user.findAll();
+      const result = await User.findAll();
 
       res.status(200).send({
         result,
