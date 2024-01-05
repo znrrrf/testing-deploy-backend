@@ -35,6 +35,8 @@ dotenv.config();
 //   }
 // });
 
+app.use(express.json());
+
 app.use("/user", userRouters);
 
 app.listen(1000, () => {
