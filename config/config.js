@@ -35,6 +35,6 @@ module.exports = {
     database: process.env.DATABASE,
     host: process.env.HOST,
     dialect: process.env.DIALECT,
-    // uri: process.env.MYSQL_ADDON_URI,
+    uri: process.env.MYSQL_ADDON_URI,
   },
 };
