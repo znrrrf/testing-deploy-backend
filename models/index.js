@@ -20,11 +20,16 @@ if (config.use_env_variable) {
     benchmark: true,
   });
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, {
-    ...config,
-    dialectModule: require("mysql2"),
-    benchmark: true,
-  });
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config,
+    {
+      dialectModule: require("mysql2"),
+      benchmark: true,
+    }
+  );
 }
 
 // const sequelize = new Sequelize({
